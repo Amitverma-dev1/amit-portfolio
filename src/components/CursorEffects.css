@@ -1,0 +1,86 @@
+
+.cursor-effects {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* Mouse-following glow */
+.cursor-glow {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(
+    circle,
+    rgba(139, 92, 246, 0.17) 0%,
+    rgba(59, 130, 246, 0.09) 40%,
+    transparent 70%
+  );
+  filter: blur(35px);
+  pointer-events: none;
+  will-change: left, top;
+  transition: left 0.12s ease-out, top 0.12s ease-out;
+}
+
+/* Particles */
+.particles-container {
+  position: absolute;
+  inset: 0;
+}
+
+.floating-particle {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: rgba(167, 139, 250, 0.7);
+  box-shadow: 0 0 10px rgba(139, 92, 246, 0.8);
+  animation: particle-float 6s ease-in-out infinite alternate;
+}
+
+@keyframes particle-float {
+  0% {
+    transform: translate3d(0, 0, 0);
+    opacity: 0.2;
+  }
+
+  50% {
+    opacity: 0.8;
+  }
+
+  100% {
+    transform: translate3d(12px, -25px, 0);
+    opacity: 0.3;
+  }
+}
+
+/* Reduce effects on smaller screens */
+@media (max-width: 768px) {
+  .cursor-glow {
+    width: 220px;
+    height: 220px;
+    opacity: 0.65;
+  }
+
+  .floating-particle {
+    width: 2px;
+    height: 2px;
+  }
+}
+
+/* Accessibility: respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .floating-particle {
+    animation: none;
+  }
+
+  .cursor-glow {
+    transition: none;
+  }
+}
