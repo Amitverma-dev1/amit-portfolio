@@ -32,17 +32,17 @@ const Footer: React.FC = () => {
   const socialLinks = [
     {
       name: 'GitHub',
-      href: 'https://github.com/YOUR_GITHUB_USERNAME',
+      href:  "https://github.com/Amitverma-dev1",
       icon: Github,
     },
     {
       name: 'LinkedIn',
-      href: 'https://www.linkedin.com/in/YOUR_LINKEDIN_USERNAME/',
+      href: "https://www.linkedin.com/in/amit-kr-verma-dev/",
       icon: Linkedin,
     },
     {
       name: 'Instagram',
-      href: 'https://www.instagram.com/YOUR_INSTAGRAM_USERNAME/',
+      href: "https://www.instagram.com/amit_v70/",
       icon: Instagram,
     },
     {
